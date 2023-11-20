@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcolatore Costo Biglietto Treno</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <h2>CALCOLA IL PREZZO DEL TUO BIGLIETTO</h2>
+    <div id="imput">
+        <div>
+            <label for="name">Nome Cognome</label>
+            <input type="text" name="name" id="name" placeholder="Inserisci il tuo nome">
+            <label for="distanzakm">Km da percorrere</label>
+            <input type="number" name="distanzakm" id="distanzakm" >
+            <label for="fasciaEta">Fascia d'Età?</label>
+            <input list="fasciaEta">
+            <datalist id="fasciaEta">
+                <option value="Minorenne">
+                <option value="Maggiorenne">
+                <option value="Over 65">
+            </datalist>
+        </div>
+        <div>
+            <button id="invia">Genera</button>
+        </div>
+    </div>
+
+    <h2>IL TUO BIGLIETTO</h2>
+    <div id="output">
+        <div>
+            <h3>Nome Passeggero</h3>
+            <h3 id="nomePasseggero"></h3>
+        </div>
+        <div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Offerta</th>
+                        <th>Carrozza</th>
+                        <th>Codice CP</th>
+                        <th>Costo biglietto</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Biglietto???</td>
+                        <td>Random da 1 a 10</td>
+                        <td>94434</td>
+                        <td>0.00€</td>
+                    </tr>
+                </tbody>
+                
+                
+                
+            </table>
+        </div>
+
+    </div>
+    <script typpe="text/javascript" src="js/script.js"></script>
+</body>
+</html>
