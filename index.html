@@ -15,11 +15,11 @@
             <label for="distanzakm">Km da percorrere</label>
             <input type="number" name="distanzakm" id="distanzakm" >
             <label for="fasciaEta">Fascia d'Età?</label>
-            <input list="fasciaEta">
-            <datalist id="fasciaEta">
-                <option value="Minorenne">
-                <option value="Maggiorenne">
-                <option value="Over 65">
+            <input id="fasciaEta" list="fascia">
+            <datalist id="fascia">
+                <option value="Minorenne">Minorenne</option>
+                <option value="Maggiorenne">Maggiorenne</option>
+                <option value="Over 65">Over 65</option>
             </datalist>
         </div>
         <div>
@@ -28,9 +28,9 @@
     </div>
 
     <h2>IL TUO BIGLIETTO</h2>
-    <div id="output">
+    <div id="biglietto" class="output">
         <div>
-            <h3>Nome Passeggero</h3>
+            <h3>Nome Passeggero:</h3>
             <h3 id="nomePasseggero"></h3>
         </div>
         <div>
@@ -45,10 +45,10 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td>Biglietto???</td>
-                        <td>Random da 1 a 10</td>
+                        <td id="offerta">Biglietto???</td>
+                        <td id="carrozza">Random da 1 a 10</td>
                         <td>94434</td>
-                        <td>0.00€</td>
+                        <td id="prezzofinale">0.00€</td>
                     </tr>
                 </tbody>
                 

@@ -12,53 +12,72 @@ MILESTONE 2: Solo una volta che il milestone 1 sarà completo e funzionante allo
 */
 
 // Variabili Preimpostate
+
 const prezzoKm = 0.21;
 
 const valuta = "€";
 
-let sconto =0;
+let sconto = 0;
 
-let nomeUser = "Utente deve indicare il suo Nome";
-let distanzaUser = "Utente deve indicare distanza da percorrere";
-let etaUser = "Utente deve indicare la sua Età";
+const biglietto = document.querySelector("#biglietto")
 
 // Trova Nome utente
-const imputNome = document.querySelector(".name")
+const inputNome = document.querySelector("#name");
 
 // Trova distanza km
-const imputKm = document.querySelector(".distanzakm")
+const inputKm = document.querySelector("#distanzakm");
 
 // Trova Età Utente
-const imputEta = document.querySelector(".fasciaEta")
+const inputEta = document.querySelector("#fasciaEta");
 
 // Bottone Cattura Dati
-const imputButton = document.getElementById("invia")
+const inputButton = document.getElementById("invia");
 
 
-imputButton.addEventListener("click",
+inputButton.addEventListener("click",
 
     function() {
-        nomeUser = imputNome.value;
+        // Mostrare Biglietto
+        biglietto.classList.remove("output")
+
+        // Acquisire dati input
+        let nomeUser = inputNome.value;
         console.log("Nome Utente:", nomeUser);
-        distanzaUser = imputKm.value;
+
+        let distanzaUser = parseInt(inputKm.value);
         console.log("Km Percorsi:", distanzaUser);
-        etaUser = imputEta.value;
+
+        let etaUser = inputEta.value;
         console.log("Fascia Età:", etaUser);
+
+        // trovare prezzo totale
+        const prezzoReale = distanzaUser * prezzoKm;
+
+        // applicare sconto età
+        if (etaUser === "Minorenne") {
+            sconto = ((prezzoReale * 20) / 100);
+        } else if (etaUser === "Over 65") {
+            sconto = ((prezzoReale * 40) / 100);
+        }
+
+        // output Nome Passeggero
+        document.getElementById("nomePasseggero").innerHTML = nomeUser;
+
+        // output Offerta
+        document.getElementById("offerta").innerHTML = etaUser;
+
+        // output Carrozza
+        document.getElementById("carrozza").innerHTML = Math.floor(Math.random() * 11);
+
+        // output prezzo i € con max 2 decimali
+        document.getElementById("prezzofinale").innerHTML = valuta + (prezzoReale - sconto).toFixed(2);
     }
 );
 
 
 
 
-// // trovare prezzo totale
-// const prezzoReale = distanzaUser * prezzoKm;
 
-// // applicare sconto età
-// if (imputEta === "Minorenne") {
-//     sconto = ((prezzoReale * 20) / 100);
-// } else if (imputEta === "Over 65") {
-//     sconto = ((prezzoReale * 40) / 100);
-// }
 
 
 
