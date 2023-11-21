@@ -33,6 +33,9 @@ const inputEta = document.querySelector("#fasciaEta");
 // Bottone Cattura Dati
 const inputButton = document.getElementById("invia");
 
+// Bottone Cattura Dati
+const resetButton = document.getElementById("reset");
+
 
 inputButton.addEventListener("click",
 
@@ -74,16 +77,15 @@ inputButton.addEventListener("click",
     }
 );
 
+resetButton.addEventListener("click",
 
+    function() {
+        // Nascondi Biglietto
+        biglietto.classList.add("output")
 
-
-
-
-
-
-
-// output descrizione del prezzo
-// document.getElementById("descrizione").innerHTML = ragioneSconto;
-
-// output prezzo i € con max 2 decimali
-// document.getElementById("risultato").innerHTML = valuta + (prezzoReale - sconto).toFixed(2);
+        // pulisci i campi di imput in HTML
+        inputNome.value = " ";
+        inputKm.value = " ";
+        inputEta.value = " ";
+    }
+);
